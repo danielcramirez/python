@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container mt-3">
+        <h2>Promedio de notas</h2>
+        <form method="post">
+            <div class="mb-3 mt-3">
+                <label for="n1">Nota 1:</label>
+                <input type="number" id="n1" name="n1" placeholder="Escriba su primera nota" class="form-control" required>
+                <label for="n2">Nota 2:</label>
+                <input type="number" id="n2" name="n2" placeholder="Escriba su segunda nota" class="form-control" required>
+                <label for="n3">Nota 3:</label>
+                <input type="number" id="n3" name="n3" placeholder="Escriba su 3 nota" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% if resultado is not none %}
+    <div class="container mt-3">
+        <h2>Resultado del promedio</h2>
+        {% if promedio_notas == "Error: Entrada no válida" %}
+            <div class="alert alert-danger">{{ promedio_notas }}</div>
+        {% else %}
+            <div class="alert alert-success">El promedio de las notas es: {{ promedio_notas }}</div>
+        {% endif %}
+    </div>
+    {% endif %}
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h2>Promedio de notas</h2>
+        <form method="post">
+            
+                <label for="n1">Nota 1:</label>
+                <input type="number" name="n1"  required>
+                <label for="n2">Nota 2:</label>
+                <input type="number" name="n2" required>
+                <label for="n3">Nota 3:</label>
+                <input type="number" name="n3" required>            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+  
+    {% if resultado is not none %}
+
+        <h2>Resultado del promedio</h2>
+        {% if promedio_notas == "Error: Entrada no válida" %}
+            <div >{{ promedio_notas }}</div>
+        {% else %}
+            <div >El promedio de las notas es: {{ promedio_notas }}</div>
+        {% endif %}
+
+    {% endif %}
+    
+</body>
+</html>
